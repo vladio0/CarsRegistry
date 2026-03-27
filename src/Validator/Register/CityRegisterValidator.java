@@ -3,11 +3,9 @@ package Validator.Register;
 import Answer.AnswerCityRegister;
 import Domain.Car;
 import Domain.CarOrder;
-import Domain.TruckCar;
+import Domain.VehicleDocument;
 import exception.CityRegisterException;
 import exception.TransportException;
-
-import java.util.List;
 
 public class CityRegisterValidator {
     public static final String IN_CODE = "NO_CAR_REGISTRY";
@@ -22,8 +20,8 @@ public class CityRegisterValidator {
         AnswerCityRegister ans = new AnswerCityRegister();
 
         ans.addItem(checkCar(co.getPassenger()));
-        ans.addItem(checkCar(co.getElectro()));
-        for (TruckCar truck : co.getTrucks()) {
+        ans.addItem(checkCar(co.getTruck()));
+        for (VehicleDocument truck : co.getDocs()) {
             ans.addItem(checkCar(truck));
         }
         return ans;

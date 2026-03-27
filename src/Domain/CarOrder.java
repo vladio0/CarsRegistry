@@ -1,38 +1,57 @@
 package Domain;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.LinkedList;
 import java.util.List;
 
 public class CarOrder {
-    private long carId;
+    private long vehicleId;
+    private LocalDateTime carOrderDate;
+    private CarOrderStatus carOrderStatus;
     private PassengerCar passenger;
-    private PassengerCar electro;
-    public List<TruckCar> trucks;
+    private TruckCar truck;
+    private Address p_address;
+    private Address t_address;
+    public List<VehicleDocument> docs;
+    private long registerOfficeId;
+    private LocalDate registrationDate;
+    private VehicleDocument vehicleDocument;
 
-    public void addTruck(TruckCar truck) {
-        if (trucks == null) {
-            trucks = new ArrayList<>(5);
+
+    public void addDoc(VehicleDocument doc) {
+        if (docs == null) {
+            docs = new ArrayList<>(5);
         }
-        trucks.add(truck);
+        docs.add(doc);
     }
 
-
-    public List<TruckCar> getTruck() {
-        return trucks;
+    public List<VehicleDocument> getDocs() {
+        return docs;
     }
 
-    public List<TruckCar> getTrucks() {
-        return trucks;
+    public void setDocs(List<VehicleDocument> docs) {
+        this.docs = docs;
     }
 
-    public long getCarId() {
-        return carId;
+    public long getVehicleId() {
+        return vehicleId;
     }
 
-    public void setCarId(long carId) {
-        this.carId = carId;
+    public void setVehicleId(long vehicleId) {
+        this.vehicleId = vehicleId;
+    }
+
+    public LocalDateTime getCarOrderDate() {
+        return carOrderDate;
+    }
+
+    public void setCarOrderDate(LocalDateTime carOrderDate) {
+        this.carOrderDate = carOrderDate;
+    }
+
+    public CarOrderStatus getCarOrderStatus() {
+        return carOrderStatus;
     }
 
     public PassengerCar getPassenger() {
@@ -43,16 +62,47 @@ public class CarOrder {
         this.passenger = passenger;
     }
 
-    public PassengerCar getElectro() {
-        return electro;
+    public TruckCar getTruck() {
+        return truck;
     }
 
-    public void setElectro(PassengerCar electro) {
-        this.electro = electro;
+    public void setTruck(TruckCar truck) {
+        this.truck = truck;
     }
 
+    public Address getP_address() {
+        return p_address;
+    }
 
-    public void setTrucks(List<TruckCar> trucks) {
-        this.trucks = trucks;
+    public void setP_address(Address p_address) {
+        this.p_address = p_address;
+    }
+
+    public Address getT_address() {
+        return t_address;
+    }
+
+    public void setT_address(Address t_address) {
+        this.t_address = t_address;
+    }
+
+    public void setCarOrderStatus(CarOrderStatus carOrderStatus) {
+        this.carOrderStatus = carOrderStatus;
+    }
+
+    public long getRegisterOfficeId() {
+        return registerOfficeId;
+    }
+
+    public void setRegisterOfficeId(long registerOfficeId) {
+        this.registerOfficeId = registerOfficeId;
+    }
+
+    public LocalDate getRegistrationDate() {
+        return registrationDate;
+    }
+
+    public void setRegistrationDate(LocalDate registrationDate) {
+        this.registrationDate = registrationDate;
     }
 }

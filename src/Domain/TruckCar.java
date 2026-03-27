@@ -1,39 +1,16 @@
 package Domain;
 
-import java.time.LocalDate;
+public class TruckCar extends Car{
 
-public class TruckCar extends Car {
-    private String truckType; // van, dump truck, tractor, tank truck
-    private double weight; // маса (кг)
-    private String fuelType; // дизель, газ
-
-    public TruckCar(String carName, String modelName, String driverName, String country, LocalDate dateOfRegister) {
-        super(carName, modelName, driverName, country, dateOfRegister);
+    public TruckCar() {
     }
 
-    public String getFuelType() {
-        return fuelType;
+    public TruckCar(String carMark, String carModel, String carCountry, int carYear,
+                    String carLicensePlate, String carColour, String carFuelType,
+                    double carWeight, int carMaxAllowedWeight) {
+        super(carMark, carModel, carCountry, carYear, carLicensePlate, carColour,
+                    carFuelType, carWeight, carMaxAllowedWeight);
     }
 
-    public void setFuelType(String fuelType) {
-        this.fuelType = fuelType;
-    }
-
-    public double getWeight() {
-        return weight;
-    }
-
-    public void setWeight(double weight) {
-        this.weight = weight;
-    }
-
-    public String getTruckType() {
-        return truckType;
-    }
-
-    public void setTruckType(String truckType) {
-        this.truckType = truckType;
-    }
 
 }
-

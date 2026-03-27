@@ -2,7 +2,7 @@ package Validator.Register;
 
 import Domain.Car;
 import Domain.PassengerCar;
-import Domain.TruckCar;
+import Domain.VehicleDocument;
 import exception.CityRegisterException;
 import exception.TransportException;
 
@@ -26,7 +26,7 @@ public class FakeCityRegisterChecker implements CityRegisterChecker {
         if (car instanceof PassengerCar) {
 
             PassengerCar p = (PassengerCar) car;
-            String pc = p.getLicensePlate();
+            String pc = p.getCarLicensePlate();
             if (pc.equals(GOOD_1) || pc.equals(GOOD_2)) {
                 res.setExisting(true);
                 res.setTemporal(false);
@@ -45,7 +45,7 @@ public class FakeCityRegisterChecker implements CityRegisterChecker {
         }
 
 
-        if(car instanceof TruckCar){
+        if(car instanceof VehicleDocument){
             res.setExisting(true);
             res.setTemporal(true);
         }
